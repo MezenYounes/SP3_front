@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <app-update-marque [marque]="updateddmar" (marqueUpdated)= "marqueUpdated($event)" [ajout]="ajout" >
+                ></app-update-marque>
+            </div>
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom Catégorie</th> </tr>
+    </thead>
+    <tbody *ngFor="let mar of marques">
+    <tr>
+    <td>{{mar.idmar}}</td>
+    <td>{{mar.nommar}}</td>
+    <td><a class="btn btn-success" (click)="updatemar(mar)">Editer</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

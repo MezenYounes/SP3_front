@@ -1,0 +1,38 @@
+<div class="container ">
+
+
+
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom camion en tapant</label>
+        <input #nomcamion [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+        </form>
+
+
+
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>description</th><th>Marque</th> </tr>
+    <tbody  *ngFor="let camion of camions |  searchFilter: searchTerm">
+    <tr >
+    <td>{{camion.idcamion}}</td>
+    <td>{{camion.nomcamion}}</td>
+    <td>{{camion.prixcamion}}</td>
+    <td>{{camion.description}}</td>
+    <td>{{camion?.marque?.nommar}}</td>
+<!-- 
+    <td><a *ngIf="authService.isAdmin()"
+        class="btn btn-danger" (click)="supprimercamion(camion)">Supprimer</a></td>
+        
+    
+        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateCamion',camion.idcamion]">Modifier</a></td>
+    
+ -->
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>  
